@@ -87,7 +87,39 @@ Setup Django, Apache2, Python Tools, and mod_wsgi on Debian Linux Systems. (Debi
 
     </VirtualHost>
     ```
+My Apache file is:
 
+```
+<VirtualHost *:80>
+
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/html
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	Alias /static /var/www/app/django/static_in_env/static_root
+	<Directory /var/www/app/django/static_in_env/static_root>
+   		Require all granted
+ 	</Directory>
+
+	Alias /media /var/www/app/django/static_in_env/media_root
+	<Directory /var/www/app/django/static_in_env/media_root>
+   		Require all granted
+	</Directory>
+
+	<Directory /var/www/app/django/crimevis/crimevis>
+    		<Files wsgi.py>
+        		Require all granted
+    		</Files>
+	</Directory>
+
+	WSGIDaemonProcess crimevis python-home=/var/www/env/crimevis python-path=/var/www/app/django/crimevis
+	WSGIProcessGroup crimevis
+	WSGIScriptAlias / /var/www/app/django/crimevis/crimevis/wsgi.py
+
+</VirtualHost>
+```
 
 6. Add User Permissions (to modify sqlite3 Database)
     ```

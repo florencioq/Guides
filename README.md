@@ -27,6 +27,8 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Angular Webserver with Rack](./all/angular_webserver.md)
 
+### CrimeVis
+[Update Virtual Machine]
 
 ### ioT & Raspberry Pi
 

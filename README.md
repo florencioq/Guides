@@ -31,6 +31,8 @@ Guides for learning + doing better web and app development. Created by [Coding F
 ### CrimeVis
 
 [Update Virtual Machine Linux, Django and Application](./all/Update_Linux_and_Django_VirtualMachine.md)
+[Install GeoDjango](./all/GeoDjango.md)
+
 
 ### ioT & Raspberry Pi
 

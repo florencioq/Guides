@@ -1,3 +1,8 @@
+For entering in the psql:
+```
+sudo -u postgres psql
+```
+
 For the error:
 
 permission denied to create extension "postgis"

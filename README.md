@@ -34,7 +34,7 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Update Virtual Machine Linux, Django and Application](./all/Update_Linux_and_Django_VirtualMachine.md)
 
-[Install GeoDjango](./all/GeoDjango.md)
+[Database Issues](./all/GeoDjango.md)
 
 
 ### ioT & Raspberry Pi

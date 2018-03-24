@@ -97,3 +97,12 @@ create database crimevis owner crimevis;
 Try something like:
 pg_restore --host "127.0.0.1" --port "5432" --username "postgres" -W --dbname "crimevis" "file.backup"
 ```
+### Update the database, create a superuser and launch the system
+```
+cd
+source env/crimewatcher/bin/activate
+cd clone/crimewatcher/crimevis
+python3 manage.py migrate
+python3 manage.py createsuperuser
+python3 manage.py runserver
+```

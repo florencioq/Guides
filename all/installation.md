@@ -59,7 +59,7 @@ git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
 ```
 cd
 mkdir env
-mkvirtualenv -p python3 env/crimewatcher
+virtualenv -p python3 env/crimewatcher
 source env/crimewatcher/bin/activate
 ```
 

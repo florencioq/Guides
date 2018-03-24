@@ -28,7 +28,16 @@ sudo -u postgres psql
 \password postgres
 \q
 ```
-Install pgadmin4
+Install pgadmin4 (this step is optional and it installs python 3.5)
 ```
 sudo apt-get install pgadmin4
 ```
+Install python3.5
+```
+sudo apt-get install python3
+```
+Install virtualenv
+```
+sudo apt-get install virtualenv
+```
+

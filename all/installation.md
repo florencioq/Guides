@@ -126,13 +126,23 @@ source env/crimewatcher/bin/activate
 ```
 sudo adduser $USER www-data
 sudo chown www-data:www-data -R /var/www/env/    
-sudo chmod -R 775 /var/www/venv/
+sudo chmod -R 775 /var/www/env/
+sudo chown www-data:www-data -R /var/www/app/    
+sudo chmod -R 775 /var/www/app/
 ```
 ### Install Python libraries
 ```
-cd
+cd /var/www
+source env/crimewatcher/bin/activate
 cd /var/www/app/crimewatcher/crimevis
 pip3 install -r requirements.txt
+```
+### Copy static files
+```
+cd /var/www
+source env/crimewatcher/bin/activate
+cd /var/www/app/crimewatcher/crimevis
+python3 manage.py collectstatic
 ```
 ### Change /etc/apache2/sites-available/000-default.conf
 ```

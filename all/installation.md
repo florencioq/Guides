@@ -120,6 +120,19 @@ sudo git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
 cd /var/www
 sudo mkdir env
 sudo virtualenv -p python3 env/crimewatcher
+source env/crimewatcher/bin/activate
+```
+### Adjust permissions
+```
+sudo adduser $USER www-data
+sudo chown www-data:www-data -R /var/www/env/    
+sudo chmod -R 775 /var/www/venv/
+```
+### Install Python libraries
+```
+cd
+cd /var/www/app/crimewatcher/crimevis
+pip3 install -r requirements.txt
 ```
 ### Change /etc/apache2/sites-available/000-default.conf
 ```

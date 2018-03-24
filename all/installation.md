@@ -40,7 +40,7 @@ Install virtualenv
 ```
 sudo apt-get install virtualenv
 ```
-### Install Geospatial Libraries
+### Install Geospatial Libraries and Postgis
 ```
-sudo apt-get install binutils libproj-dev gdal-bin
+sudo apt-get install binutils libproj-dev gdal-bin postgis
 ```

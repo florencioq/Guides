@@ -32,7 +32,7 @@ Install pgadmin4 (this step is optional and it installs python 3.5)
 ```
 sudo apt-get install pgadmin4
 ```
-Install python3.5
+### Install python3.5
 ```
 sudo apt-get install python3
 ```

@@ -103,14 +103,47 @@ python3 manage.py createsuperuser
 python3 manage.py runserver
 ```
 ## For production
-### Install and test Apache2
+### Install Apache2 and wsgi
 ```
 sudo apt-get install apache2
+sudo apt-get install libapache2-mod-wsgi-py3 
 ```
-### The application will be installed in Apache subdirectories tree
+### Installing the application in Apache subdirectories tree
 ```
 cd /var/www
 sudo mkdir app
 cd app
-git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
+sudo git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
+```
+### Change /etc/apache2/sites-available/000-default.conf
+```
+<VirtualHost *:80>
+
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/html
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	Alias /static /var/www/app/crimewatcher/static_in_env/static_root
+	<Directory /var/www/app/crimewatcher/static_in_env/static_root>
+   		Require all granted
+ 	</Directory>
+
+	Alias /media /var/www/app/crimewatcher/static_in_env/media_root
+	<Directory /var/www/app/crimewatcher/static_in_env/media_root>
+   		Require all granted
+	</Directory>
+
+	<Directory /var/www/app/crimewatcher/crimevis/crimevis>
+    		<Files wsgi.py>
+        		Require all granted
+    		</Files>
+	</Directory>
+
+	WSGIDaemonProcess crimevis python-home=/var/www/env/crimewatcher python-path=/var/www/app/crimewatcher/crimevis
+	WSGIProcessGroup crimevis
+	WSGIScriptAlias / /var/www/app/crimewatcher/crimevis/crimevis/wsgi.py
+
+</VirtualHost>
 ```

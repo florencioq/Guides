@@ -50,7 +50,18 @@ sudo apt-get install git
 ```
 ### Download of the master branch of the application
 ```
+cd
 mkdir clone
 cd clone
 git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
 ```
+### Create and activate the virtual environment
+```
+cd
+mkdir env
+mkvirtualenv -p python3 env/crimewatcher
+source env/crimewatcher/bin/activate
+```
+
+
+

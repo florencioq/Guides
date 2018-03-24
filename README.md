@@ -30,6 +30,8 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 ### CrimeWatcher
 
+[Installation and Deployment](./all/installation.md)
+
 [Commands for localization](./all/localization.md)
 
 [Update Virtual Machine Linux, Django and Application](./all/Update_Linux_and_Django_VirtualMachine.md)

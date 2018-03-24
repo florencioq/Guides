@@ -1,8 +1,4 @@
-### Install Apache2
-```
-sudo apt-get install apache2
-```
-
+## For both development and production
 ### Install Postgresql 10
 
 Create the file /etc/apt/sources.list.d/pgdg.list, and add a line for the repository
@@ -97,7 +93,7 @@ create database crimevis owner crimevis;
 Try something like:
 pg_restore --host "127.0.0.1" --port "5432" --username "postgres" -W --dbname "crimevis" "file.backup"
 ```
-### Update the database, create a superuser and launch the system
+### Update the database, create a superuser and launch the system.
 ```
 cd
 source env/crimewatcher/bin/activate
@@ -105,4 +101,16 @@ cd clone/crimewatcher/crimevis
 python3 manage.py migrate
 python3 manage.py createsuperuser
 python3 manage.py runserver
+```
+## For production
+### Install and test Apache2
+```
+sudo apt-get install apache2
+```
+### The application will be installed in Apache subdirectories tree
+```
+cd /var/www
+sudo mkdir app
+cd app
+git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
 ```

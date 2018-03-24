@@ -122,13 +122,14 @@ sudo mkdir env
 sudo virtualenv -p python3 env/crimewatcher
 source env/crimewatcher/bin/activate
 ```
-### Adjust permissions
+### Adjust permissions and reboot
 ```
 sudo adduser $USER www-data
 sudo chown www-data:www-data -R /var/www/env/    
 sudo chmod -R 775 /var/www/env/
 sudo chown www-data:www-data -R /var/www/app/    
 sudo chmod -R 775 /var/www/app/
+sudo reboot
 ```
 ### Install Python libraries
 ```

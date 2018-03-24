@@ -62,6 +62,28 @@ mkdir env
 virtualenv -p python3 env/crimewatcher
 source env/crimewatcher/bin/activate
 ```
+### Install Python libraries
+```
+cd
+cd clone/crimewatcher/crimevis
+pip3 install -r requirements.txt
+```
+### Create role crimevis
+```
+sudo -u postgres psql
+create role crimevis password 'crimevis';
+\q
+```
+### Change the login type for the user crimevis
+```
+Edit /etc/postgresql/10/main/pg_hba.conf and change:
 
+    local   all             all                                     peer
+to:
+    local   all             all                                     md5
 
+Then restart the server:
+
+sudo service postgresql restart
+```
 

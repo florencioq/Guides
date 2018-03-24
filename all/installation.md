@@ -108,18 +108,18 @@ python3 manage.py runserver
 sudo apt-get install apache2
 sudo apt-get install libapache2-mod-wsgi-py3 
 ```
-### Create the virtual environment
-```
-cd /var/www
-sudo mkdir env
-sudo virtualenv -p python3 env/crimewatcher
-```
 ### Installing the application in Apache subdirectories tree
 ```
 cd /var/www
 sudo mkdir app
 cd app
 sudo git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
+```
+### Create the virtual environment
+```
+cd /var/www
+sudo mkdir env
+sudo virtualenv -p python3 env/crimewatcher
 ```
 ### Change /etc/apache2/sites-available/000-default.conf
 ```

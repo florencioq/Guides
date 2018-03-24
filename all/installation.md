@@ -68,10 +68,10 @@ cd
 cd clone/crimewatcher/crimevis
 pip3 install -r requirements.txt
 ```
-### Create role crimevis
+### Create user crimevis
 ```
 sudo -u postgres psql
-create role crimevis password 'crimevis';
+create role crimevis password 'crimevis' login;
 \q
 ```
 ### Change the login type for the user crimevis
@@ -86,4 +86,9 @@ Then restart the server:
 
 sudo service postgresql restart
 ```
-
+### Create database crimevis
+```
+sudo -u postgres psql
+create database crimevis owner crimevis;
+\q
+```

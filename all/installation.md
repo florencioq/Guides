@@ -44,3 +44,13 @@ sudo apt-get install virtualenv
 ```
 sudo apt-get install binutils libproj-dev gdal-bin postgis
 ```
+### Install Git
+```
+sudo apt-get install git
+```
+### Download of the master branch of the application
+```
+mkdir clone
+cd clone
+git clone https://florencioq@bitbucket.org/florencioq/crimewatcher.git
+```

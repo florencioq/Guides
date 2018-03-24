@@ -28,3 +28,7 @@ sudo -u postgres psql
 \password postgres
 \q
 ```
+Install pgadmin4
+```
+sudo apt-get install pgadmin4
+```

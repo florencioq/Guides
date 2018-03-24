@@ -22,3 +22,9 @@ Install the main package
 ```
 sudo apt-get install postgresql-10
 ```
+Change the password of the postgres user
+```
+sudo -u postgres psql
+\password postgres
+\q
+```

@@ -177,4 +177,4 @@ python3 manage.py collectstatic
 
 </VirtualHost>
 ```
-### Reboot and everything should be in order
+### Reboot and everything should be in good working order

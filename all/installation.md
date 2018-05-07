@@ -178,3 +178,18 @@ python3 manage.py collectstatic
 </VirtualHost>
 ```
 ### Reboot and everything should be in good working order
+
+### To load Tippecanoe records
+
+Install in Linux the following packages:
+```
+sudo apt-get mysql-client
+sudo apt-get libmysqlclient-dev
+sudo apt-get build-essential
+sudo apt-get python-dev
+sudo apt-get python3-dev
+```
+Install in Python:
+```
+pip install mysqlclient
+```

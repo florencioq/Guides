@@ -88,7 +88,12 @@ sudo -u postgres psql
 create database crimevis owner crimevis;
 \q
 ```
-### Use pgadmin4 or pg_restore to restore a backup of the database crimevis
+### Ou... crie um banco novo
+```
+sudo -u postgres psql crimevis
+crimevis=# create extension postgis;
+```
+### Ou... use pgadmin4 or pg_restore to restore a backup of the database crimevis
 ```
 Try something like:
 pg_restore --host "127.0.0.1" --port "5432" --username "postgres" -W --dbname "crimevis" "file.backup"

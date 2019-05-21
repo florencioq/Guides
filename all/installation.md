@@ -92,6 +92,7 @@ create database crimevis owner crimevis;
 ```
 sudo -u postgres psql crimevis
 crimevis=# create extension postgis;
+\q
 ```
 ### Ou... use pgadmin4 or pg_restore to restore a backup of the database crimevis
 ```

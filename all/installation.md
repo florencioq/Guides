@@ -1,5 +1,5 @@
 ## For both development and production
-### Install Postgresql 10
+### Install Postgresql 10-12
 
 Create the file /etc/apt/sources.list.d/pgdg.list, and add a line for the repository
 
@@ -24,11 +24,11 @@ sudo -u postgres psql
 \password postgres
 \q
 ```
-Install pgadmin4 (this step is optional and it installs python 3.5)
+Install pgadmin4 (this step is optional and it installs python 3.5-3.9)
 ```
 sudo apt-get install pgadmin4
 ```
-### Install python3.5
+### Install python3.5-3.9
 ```
 sudo apt-get install python3
 ```

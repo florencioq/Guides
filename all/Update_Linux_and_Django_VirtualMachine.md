@@ -16,10 +16,17 @@ pip3 install --upgrade -r requirements.txt;
 ```
 ### Update the application
 ```
-source /var/www/env/crimevis/bin/activate;
-cd /var/www/app/django;
-sudo git fetch origin;
-sudo git reset --hard origin/master;
+#!/bin/bash
+source /var/www/env/crimewatcher/bin/activate
+cd /var/www/app/spi-crime-watcher/
+git fetch origin --verbose
+git reset --hard origin/master
+sudo rm /var/www/app/spi-crime-watcher/static_in_env/static_root/* -Rf
+cd /var/www/app/spi-crime-watcher/crimevis
+python3 manage.py collectstatic
+python3 manage.py migrate
+cd /var/www/
+sudo chown www-data:www-data -R /var/www/app/
 ```
 ### Collect Static
 ```
